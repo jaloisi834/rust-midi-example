@@ -107,7 +107,7 @@ Next we set the time signature:
 - 24 clocks per tick. *More on this in code comments*.
 - Eight 32nd notes per 24 clocks. *More on this in code comments*.
 
-Now we start adding note events:
+Now we have a bunch of note events:
 
 ```
 00 | 90 | 3c | 64
