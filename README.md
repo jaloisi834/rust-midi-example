@@ -15,6 +15,10 @@ Some reference material that I found useful while I worked on this application:
 - Info on primary MIDI event types: https://www.cs.cmu.edu/~music/cmsip/readings/MIDI%20tutorial%20for%20programmers.html
 - The official MIDI 1.0 specification: https://www.midi.org/specifications/midi1-specifications
 
+## Setup
+
+- Install Rust - https://www.rust-lang.org/tools/install
+
 ## Running
 
 Run the application and output a MIDI file to `result.mid`.
