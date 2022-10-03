@@ -79,6 +79,9 @@ The next chunk starts a track:
 - The `MTrk` marker.
 - 32 bit `147` indicating that there are 147 bytes following in the track.
 
+
+Following the track header will be a series of meta and MIDI events. The first sets the tempo.
+
 ```
 00 | ff | 51 | 03 | 07 a1 20
 ```
@@ -88,6 +91,8 @@ The next chunk starts a track:
 - "Set tempo" type
 - Three data bytes following.
 - 500,000 microseconds per quarter note. *More on this in code comments*.
+
+Next we set the time signature:
 
 ```
 00 | ff | 58 | 04 | 04 | 02 | 18 | 08
@@ -101,6 +106,8 @@ The next chunk starts a track:
 - Time signature denominator is four (2^2). *More on this in code comments*.
 - 24 clocks per tick. *More on this in code comments*.
 - Eight 32nd notes per 24 clocks. *More on this in code comments*.
+
+Now we start adding note events:
 
 ```
 00 | 90 | 3c | 64
