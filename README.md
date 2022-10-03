@@ -1,4 +1,4 @@
-# MIDI Test
+# Rust MIDI Example
 
 A simple project to test generating MIDI files with Rust!
 
