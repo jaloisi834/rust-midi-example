@@ -15,6 +15,10 @@ Some reference material that I found useful while I worked on this application:
 - Info on primary MIDI event types: https://www.cs.cmu.edu/~music/cmsip/readings/MIDI%20tutorial%20for%20programmers.html
 - The official MIDI 1.0 specification: https://www.midi.org/specifications/midi1-specifications
 
+Tools:
+
+- Online MIDI player: https://midiplayer.ehubsoft.net/
+
 ## Setup
 
 - Install Rust - https://www.rust-lang.org/tools/install
@@ -29,7 +33,7 @@ cargo run
 
 ## Understanding the Output
 
-Using `hexdump` (a tool in bash) on the result file we can see contents of the file as hexadecimal chunks:
+Using `hexdump` (a tool in bash) on the result file we can its contents in hexadecimal format:
 
 ```
 $ hexdump -C result.mid
@@ -46,11 +50,13 @@ $ hexdump -C result.mid
 000000a0  64 60 80 4b 64 00 ff 2f  00                       |d`.Kd../.|
 ```
 
-That's a little hard to look at; let's break it down into chunks. The following is formatted with `|` between each logical sub-chunk, and each bullet point corresponds to a sub-chunk.
+I know this is pretty gross and low level, but it's not actually that hard to understand once you know what you are looking at. A MIDI file is just a sequence of bytes representing different instructions. Let's break it down into chunks so we can understand the instructions in this file!
+
+The following chunks are formatted with `|` between each logical sub-chunk, and each bullet point corresponds to a sub-chunk. Also when interpreting numbers remember that they are in hexadecimal (e.g. 0x60 = 96).
 
 ### Header
 
-The first chunk is the file header:
+The first chunk is always the file header:
 
 ```
 4d 54 68 64 | 00 00 00 06 | 00 01 | 00 01 | 00 60
