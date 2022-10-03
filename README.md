@@ -31,7 +31,7 @@ cargo run
 
 Using `hexdump` (a tool in bash) on the result file we can see contents of the file as hexadecimal chunks:
 
-```sh
+```
 $ hexdump -C result.mid
 00000000  4d 54 68 64 00 00 00 06  00 01 00 01 00 60 4d 54  |MThd.........`MT|
 00000010  72 6b 00 00 00 93 00 ff  51 03 07 a1 20 00 ff 58  |rk......Q... ..X|
